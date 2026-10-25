@@ -62,7 +62,7 @@ In ASI:One: `run the sample flood scenario` -> `road to Dhemaji is blocked` -> `
 | Resource | reliefmesh-resource | `1b593349277957309c7fb6b9da8137e6` | supplies, volunteers, vehicles, shortages |
 | Routing | reliefmesh-routing | `522ab57a552591ca8d2b4be90b9f7be2` | NetworkX road/river/air routes |
 
-Agentverse profile URL(s): https://agentverse.ai/profile | ASI:One shared chat: https://asi1.ai/my-ai/superpowers
+Agentverse profile URL: https://agentverse.ai/agents/details/agent1qfxn2d6kupa3zulgfyrmf7dmszq2eet73hd5a29n5cxxk75alkuc5rkatph/profile | ASI:One shared chat: https://asi1.ai/shared-chat/42a9ea90-c770-4449-89f3-aedf484d8363
 
 ## ASI:One LLM
 Set `ASI1_API_KEY` (https://asi1.ai/dashboard/api-keys) so the ASI:One LLM understands chat messages, parses reports and explains plans. Without it, deterministic rules are used. Any OpenAI-compatible provider works via `LLM_API_KEY`/`LLM_BASE_URL`.
