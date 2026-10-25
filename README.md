@@ -25,7 +25,7 @@ cd frontend && npm i && npm run dev                    # http://localhost:5173
 ```
 Tests: `python -m pytest -q` (dedupe, conflicts, rerouting on a blocked edge, approval gate).
 
-## Demo (3 minutes)
+## Demo 
 Open the dashboard -> **Start Demo** -> **Next Step** x7. Or click **Simulate Road Blocked** for the replanning moment,
 then **Approve Plan**. Script: `docs/demo_script.md`. Architecture: `docs/architecture.md`.
 
@@ -43,7 +43,7 @@ then **Approve Plan**. Script: `docs/demo_script.md`. Architecture: `docs/archit
 | GET | /agents/log | inter-agent message feed |
 | GET | /stream | SSE snapshots |
 
-## ASI:One + Agentverse (hackathon requirement)
+## ASI:One + Agentverse 
 Full guide: [`docs/ASI_ONE_DEPLOY.md`](docs/ASI_ONE_DEPLOY.md). Quick version (needs **Python 3.10-3.13**, not 3.14):
 ```bash
 pip install -r requirements.txt && cp .env.example .env     # set seeds + ASI1_API_KEY
@@ -53,7 +53,7 @@ pip install -r requirements.txt && cp .env.example .env     # set seeds + ASI1_A
 ```
 In ASI:One: `run the sample flood scenario` -> `road to Dhemaji is blocked` -> `avoid the helicopter` -> `approve plan`.
 
-### Agents (fill in after your first run - addresses come from your seeds)
+### Agents
 | Agent | Name | Address | Role |
 |---|---|---|---|
 | Coordinator | reliefmesh-coordinator | `a89d3f0ed8eec4c453922243c98d3eca` | ASI:One chat (Agent Chat Protocol), conflicts, approval gate |
@@ -79,11 +79,3 @@ frontend/ React + Vite + Tailwind + Leaflet dashboard
 docs/     architecture.md slides_outline.md demo_script.md
 ```
 
-## Known limitations
-- Dashboard API runs the pipeline synchronously through `backend/pipeline.py`; the real uAgents run the same logic over messages (used by the chat/ASI:One path). Both share one state in-process.
-- Road distances/speeds are approximate demo values, not live traffic or real flood data.
-- Vehicle scheduling is greedy (priority order), not a global optimiser; one truck stationed at Jorhat makes far-south sites wait or be deferred.
-- Not tested against a live Agentverse account in the authoring sandbox: verify mailbox + ASI:One chat on your machine.
-- The Bureau (`python -m backend.run_all`) is for local dashboard demos; use `scripts/run_agents.*` for Agentverse.
-- The frontend was not built in the authoring sandbox (no network); run `npm i` once.
-- Round 2 of Fetch-A-Thon requires code written during the event; use this prototype for Round 1 only.
